@@ -2,16 +2,16 @@
 class Restish < Formula
   desc "Restish is a CLI for interacting with REST-ish HTTP APIs with some nice features built-in."
   homepage "https://rest.sh/"
-  version "0.3.1"
+  version "0.4.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/danielgtaylor/restish/releases/download/v0.3.1/restish-0.3.1-mac-x86_64.tar.gz"
-    sha256 "6b8daf399102b3f98db8e0620527beaad2d782488dcfa501257a97239d5077d0"
+    url "https://github.com/danielgtaylor/restish/releases/download/v0.4.0/restish-0.4.0-mac-x86_64.tar.gz"
+    sha256 "8cd82dafa92ef0bb3e813d7d7c93e8689854c1ba5ba4921329fc78814560c164"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.3.1/restish-0.3.1-linux-x86_64.tar.gz"
-      sha256 "05f4a7f7e46cfec0b847dbb81eb0a3f193184644a2c44330add92e683abe9d0a"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.4.0/restish-0.4.0-linux-x86_64.tar.gz"
+      sha256 "c193acb05c60da036d5723e005c599127c904d9a02e8a04a19df524d4154ce7d"
     end
   end
 
