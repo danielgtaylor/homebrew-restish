@@ -6,7 +6,6 @@ class Restish < Formula
   desc "Restish is a CLI for interacting with REST-ish HTTP APIs with some nice features built-in."
   homepage "https://rest.sh/"
   version "0.8.0"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
