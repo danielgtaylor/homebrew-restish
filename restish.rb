@@ -5,12 +5,20 @@
 class Restish < Formula
   desc "Restish is a CLI for interacting with REST-ish HTTP APIs with some nice features built-in."
   homepage "https://rest.sh/"
-  version "0.9.1"
+  version "0.9.2"
 
   on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.2/restish-0.9.2-mac-arm64.tar.gz"
+      sha256 "b7c8b7022bbe4c29dd64b2b19d8fdc2f999fa042daf9eed0c9ba5c23326b39b0"
+
+      def install
+        bin.install "restish"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.1/restish-0.9.1-mac-x86_64.tar.gz"
-      sha256 "2d48fbfaeaf47d0643d53781a938adc868c04b09cfa489fe9d6687f085631837"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.2/restish-0.9.2-mac-x86_64.tar.gz"
+      sha256 "4d933eeba9eb70906e45b0498108bf7ad56f3616b45bbd489e759366719ddbe1"
 
       def install
         bin.install "restish"
@@ -20,16 +28,16 @@ class Restish < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.1/restish-0.9.1-linux-x86_64.tar.gz"
-      sha256 "8ce25994a5b2119d601d3a4161bba391310043386facaf578ec61606429a118c"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.2/restish-0.9.2-linux-x86_64.tar.gz"
+      sha256 "11aa02ea2edb5da22605889512ea59c1797209d0186a79472c61e6e44e9508d3"
 
       def install
         bin.install "restish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.1/restish-0.9.1-linux-arm64.tar.gz"
-      sha256 "58e655f5eca3718c6d2c5a08f79330ad5ebe2affdacc8a45d93e5f810a1a7d3b"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.2/restish-0.9.2-linux-arm64.tar.gz"
+      sha256 "87e913a366cf913f98ed0d8ab35c717ef621130b7fae4527dd13cd06537413f4"
 
       def install
         bin.install "restish"
