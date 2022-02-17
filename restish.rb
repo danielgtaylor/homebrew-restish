@@ -5,27 +5,43 @@
 class Restish < Formula
   desc "Restish is a CLI for interacting with REST-ish HTTP APIs with some nice features built-in."
   homepage "https://rest.sh/"
-  version "0.8.0"
+  version "0.9.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.8.0/restish-0.8.0-mac-x86_64.tar.gz"
-      sha256 "f2f4be1174d843aa4d776497746295de30cf83f5b7e5097e4d5cc79bfd4e58de"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.4/restish-0.9.4-mac-x86_64.tar.gz"
+      sha256 "fbac03fdadf8145cf68ed298884773cead4e7deea1fff218e420bc6e8b75a57e"
+
+      def install
+        bin.install "restish"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.4/restish-0.9.4-mac-arm64.tar.gz"
+      sha256 "b6ce298875c6679c58891683e55bd193c8b919f01d8aa7547637960c90403faa"
+
+      def install
+        bin.install "restish"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.8.0/restish-0.8.0-linux-x86_64.tar.gz"
-      sha256 "fe9f8ff2955be223dc0048798041712ba3ca0ab3e21bb499eda2ed313da545b5"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.4/restish-0.9.4-linux-x86_64.tar.gz"
+      sha256 "4fe698d90be2df4810a07c8fc360cbda474bc241c635196a4e4df55702246695"
+
+      def install
+        bin.install "restish"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.8.0/restish-0.8.0-linux-arm64.tar.gz"
-      sha256 "50e71830950ee56a0c41609e79db57a93d861f55621c8ebfd039cdd0794ea9d7"
-    end
-  end
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.9.4/restish-0.9.4-linux-arm64.tar.gz"
+      sha256 "f2398a4df62769b4752bd8d1a5ada490e12dd4395c0f36d2b6d680b1461d5d5d"
 
-  def install
-    bin.install "restish"
+      def install
+        bin.install "restish"
+      end
+    end
   end
 end
