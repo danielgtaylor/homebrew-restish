@@ -5,20 +5,20 @@
 class Restish < Formula
   desc "Restish is a CLI for interacting with REST-ish HTTP APIs with some nice features built-in."
   homepage "https://rest.sh/"
-  version "0.11.0"
+  version "0.12.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.11.0/restish-0.11.0-mac-x86_64.tar.gz"
-      sha256 "e08c8257756692fcd1f957e3031caae05b7fc216249e40bcdc89b9029c1f8bb2"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.12.0/restish-0.12.0-mac-x86_64.tar.gz"
+      sha256 "5cbe28e5311cc5eafbd7f10a32d5aec5bd0bb9d58f45512f0ffd64ac52b307c5"
 
       def install
         bin.install "restish"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.11.0/restish-0.11.0-mac-arm64.tar.gz"
-      sha256 "84c9fc2366f2411a42e47cf41f1a3a1be8c220472fa78b1495905eeddaf52248"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.12.0/restish-0.12.0-mac-arm64.tar.gz"
+      sha256 "571e65e2e296566f0204720af3ff3116210b5bee188391efb0ca54e2eea621ee"
 
       def install
         bin.install "restish"
@@ -28,16 +28,16 @@ class Restish < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.11.0/restish-0.11.0-linux-arm64.tar.gz"
-      sha256 "98c8b68b4409312d598106ae169cda01497a3902bfbd31811ce35b584475715d"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.12.0/restish-0.12.0-linux-arm64.tar.gz"
+      sha256 "7a232bcd9e58844613c4f1ac9760046a9c7a4914f99f853d552c76426ff98af4"
 
       def install
         bin.install "restish"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.11.0/restish-0.11.0-linux-x86_64.tar.gz"
-      sha256 "beb3d2ffe756b30c570bb4e8bd41e4bd0bce28a8ba5874c4d695f10147f2618f"
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.12.0/restish-0.12.0-linux-x86_64.tar.gz"
+      sha256 "e0528878dcb58b15f655d0eddb44eac0a26227b2dac467d1636a2b77d280cc16"
 
       def install
         bin.install "restish"
