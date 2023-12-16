@@ -5,20 +5,20 @@
 class Restish < Formula
   desc "Restish is a CLI for interacting with REST-ish HTTP APIs with some nice features built-in."
   homepage "https://rest.sh/"
-  version "0.19.0"
+  version "0.20.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.19.0/restish-0.19.0-darwin-amd64.tar.gz"
-      sha256 "288d82b73b23793a28043e3f72bf5210d8833b903dedd0f973e4b1fb153121ac"
+    if Hardware::CPU.arm?
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.20.0/restish-0.20.0-darwin-arm64.tar.gz"
+      sha256 "a122a778d742314d3c9a00e97bc6504b36ee78896e323fa500feb51b36d2bbd7"
 
       def install
         bin.install "restish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.19.0/restish-0.19.0-darwin-arm64.tar.gz"
-      sha256 "1a7c042b0ee47c00fb193be8431610975eeaaea58fbc9728446536b39d79ba6c"
+    if Hardware::CPU.intel?
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.20.0/restish-0.20.0-darwin-amd64.tar.gz"
+      sha256 "e6fd362e555b1518d41fdb412a1e6a5f62ca6ab5129cac4dd08e022d483aa844"
 
       def install
         bin.install "restish"
@@ -27,17 +27,17 @@ class Restish < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.19.0/restish-0.19.0-linux-amd64.tar.gz"
-      sha256 "55afc9f8d557eebb08f9bbe9a5342fe205dcdb246b65fe69392408e19a87f04c"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.20.0/restish-0.20.0-linux-arm64.tar.gz"
+      sha256 "eabcc5405d77bc2030c9b2ff18a9632a871e1a3e949d0fb0c07c10729de83e94"
 
       def install
         bin.install "restish"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielgtaylor/restish/releases/download/v0.19.0/restish-0.19.0-linux-arm64.tar.gz"
-      sha256 "90636e65a541c24ede6e81a9d4ab86423d8d6666aa303647c168b5cd548c09f8"
+    if Hardware::CPU.intel?
+      url "https://github.com/danielgtaylor/restish/releases/download/v0.20.0/restish-0.20.0-linux-amd64.tar.gz"
+      sha256 "472bda01903b4dc3751fd7cf037dbdb9362b4173ce362d2246b43a0a45f4c057"
 
       def install
         bin.install "restish"
